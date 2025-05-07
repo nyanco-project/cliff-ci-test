@@ -1,3 +1,3 @@
 fn main() {
-    println!("Test merge commit.");
+    println!("Test multiple commits.");
 }

@@ -1,11 +1,15 @@
 # Changelog
 
-## [unreleased]
+## [0.2.2](https://github.com/nyanco-project/cliff-ci-test/tree/0.2.2) - 2025-05-07
 ### What's changed
 
 #### <!-- 10 -->💼 Other
 
-* test merge commit by @ognis1205## [0.1.7](https://github.com/nyanco-project/cliff-ci-test/tree/0.1.7) - 2025-05-07
+* test merge commit by @ognis1205
+
+**Full Changelog**: https://github.com/nyanco-project/cliff-ci-test/compare/v0.2.1...v0.2.2
+
+## [0.1.7](https://github.com/nyanco-project/cliff-ci-test/tree/0.1.7) - 2025-05-07
 ### What's changed
 
 #### <!-- 0 -->🚀 Features

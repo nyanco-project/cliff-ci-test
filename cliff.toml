@@ -47,7 +47,11 @@ commit_parsers = [
   { field = "github.pr_title", pattern = "^chore\\(pull\\)", skip = true },
   { field = "github.pr_title", pattern = "^chore|^ci", group = "<!-- 7 -->⚙️ Miscellaneous Tasks" },
   { field = "github.pr_title", pattern = "^revert", group = "<!-- 9 -->◀️ Revert" },
-  { field = "github.pr_title", pattern = ".*", group = "<!-- 10 -->💼 Other" },
+#  { field = "github.pr_title", pattern = ".*", group = "<!-- 10 -->💼 Other" },
+#  { field = "github.pr_title", pattern = "^chore: update changelog", skip = true },
+#  { field = "github.username", pattern = "github-actions\\[bot\\]", skip = true },
+  { field = "github.email", pattern = "^github-actions@github.com$", skip = true },
+  { field = "github.username", pattern = "^github-actions$", skip = true },
 ]
 filter_commits = false
 topo_order = false

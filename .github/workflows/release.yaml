@@ -19,9 +19,9 @@ jobs:
       - name: Generate CHANGELOG.md and release notes
         id: changelog
         run: |
-          git-cliff --config cliff.toml -o CHANGELOG.md
+          git-cliff --github-repo=nyanco-project/cliff-ci-test --config cliff.toml -o CHANGELOG.md
           echo "CHANGELOG<<EOF" >> $GITHUB_ENV
-          git-cliff --latest --config cliff.toml >> $GITHUB_ENV
+          git-cliff --latest --github-repo=nyanco-project/cliff-ci-test --config cliff.toml >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
       - name: Commit and push changelog (if changed)
         run: |

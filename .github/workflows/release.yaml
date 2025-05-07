@@ -21,10 +21,10 @@ jobs:
       - name: Generate CHANGELOG.md and release notes
         id: changelog
         run: |
-          git-cliff --github-repo=${{ github.repository }} --config cliff.toml -o CHANGELOG.md
+          git-cliff --tag ${{ github.ref_name }} --github-repo=${{ github.repository }} --config cliff.toml -o CHANGELOG.md
           {
             echo "CHANGELOG<<EOF"
-            git-cliff --latest --github-repo=${{ github.repository }} --config cliff.toml
+            git-cliff --latest --tag ${{ github.ref_name }} --github-repo=${{ github.repository }} --config cliff.toml
             echo "EOF"
           } >> $GITHUB_ENV
       - name: Commit and push changelog (if changed)

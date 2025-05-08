@@ -16,9 +16,9 @@ body = """
   #### {{ group }}
   {% for commit in commits %}
     {% if commit.remote.pr_title -%}\
-      {%- set commit_message = commit.remote.pr_title -%}
+      {%- set commit_message = commit.remote.pr_title | lower | trim | replace(from=".", to="") -%}
     {%- else -%}
-      {%- set commit_message = commit.message -%}
+      {%- set commit_message = commit.message | lower | trim | replace(from=".", to="") -%}
     {%- endif -%}
     * {{ commit_message | split(pat="\n") | first | trim }}\
       {% if commit.remote.username %} by **@{{ commit.remote.username }}**{%- endif -%}

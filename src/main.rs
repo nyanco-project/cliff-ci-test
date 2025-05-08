@@ -12,11 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+/// Prints a message.
 fn print(message: impl AsRef<str> + std::fmt::Display) {
    println!("{}", message);
 }
 
-
+/// Entry point.
 fn main() {
     print("Test multiple PRs.");
 }

@@ -17,9 +17,15 @@ fn print(message: impl AsRef<str> + std::fmt::Display) {
    println!("{}", message);
 }
 
+/// An awesome feature.
+fn do_something() {
+   println!("Do something");
+}
+
 /// Entry point.
 fn main() {
-    print("Test multiple PRs.");
+    print("Hello, cliff!");
+    do_something();
 }
 
 #[cfg(test)]

@@ -18,13 +18,12 @@ header = """
   specific language governing permissions and limitations
   under the License.
 -->
-
-# Changelog
 """
 body = """
 {%- macro remote_url() -%}
   https://github.com/{{ remote.github.owner }}/{{ remote.github.repo }}
 {%- endmacro -%}
+# Changelog
 {% if version %}
   ## [{{ version | trim_start_matches(pat="v") }}]({{ self::remote_url() }}/tree/{{ version | trim_start_matches(pat="v")}}) - {{ timestamp | date(format="%Y-%m-%d") }}
 {% else %}

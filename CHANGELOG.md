@@ -17,4 +17,4 @@
   under the License.
 -->
 
-Change logs for each release can be found [here](devops/changelog).
+Change logs for each release can be found [here](dev/changelog).

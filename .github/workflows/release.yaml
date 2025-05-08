@@ -26,7 +26,7 @@ jobs:
           --latest \
           --tag ${{ github.ref_name }} \
           --github-repo ${{ github.repository }} \
-          --config cliff.toml \
+          --config dev/etc/cliff.toml \
           -o devops/changelog/${{ github.ref_name }}.md
           {
             echo "CHANGELOG<<EOF"

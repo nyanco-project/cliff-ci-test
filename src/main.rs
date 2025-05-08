@@ -21,3 +21,11 @@ fn print(message: impl AsRef<str> + std::fmt::Display) {
 fn main() {
     print("Test multiple PRs.");
 }
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn test_something() {
+        assert!(true);
+    }
+}

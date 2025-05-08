@@ -59,25 +59,35 @@ trim = true
 conventional_commits = true
 filter_unconventional = false
 split_commits = false
+# NOTE:
+# When selecting `remote.pr_title` as the `field`, ^ does not match properly,
+# so the following verbose regex is used as a workaround.
 commit_parsers = [
   { message = "$^", skip = true },
-  { field = "remote.username", pattern = "invalid-email-address", skip = true },
-  { field = "remote.pr_title", pattern = "feat:", group = "<!-- 0 -->🚀 Features" },
-  { field = "remote.pr_title", pattern = "fix:", group = "<!-- 1 -->🐛 Bug Fixes" },
-  { field = "remote.pr_title", pattern = "doc:", group = "<!-- 3 -->📚 Documentation" },
-  { field = "remote.pr_title", pattern = "perf:", group = "<!-- 4 -->⚡ Performance" },
-  { field = "remote.pr_title", pattern = "refactor:", group = "<!-- 2 -->🚜 Refactor" },
-  { field = "remote.pr_title", pattern = "style:", group = "<!-- 5 -->🎨 Styling" },
-  { field = "remote.pr_title", pattern = "test:", group = "<!-- 6 -->🧪 Testing" },
-  { field = "remote.pr_title", pattern = "chore\\(release\\):", skip = true },
-  { field = "remote.pr_title", pattern = "chore\\(deps.*\\):", skip = true },
-  { field = "remote.pr_title", pattern = "chore\\(pr\\):", skip = true },
-  { field = "remote.pr_title", pattern = "chore\\(pull\\):", skip = true },
-  { field = "remote.pr_title", pattern = "chore:|ci:", group = "<!-- 7 -->⚙️ Miscellaneous Tasks" },
-  { field = "remote.pr_title", pattern = "revert:", group = "<!-- 9 -->◀️ Revert" },
+  { field = "author.name", pattern = "github-actions", skip = true },
+  { field = "author.email", pattern = "github-actions@github.com", skip = true },
+  { field = "committer.name", pattern = "github-actions", skip = true },
+  { field = "committer.email", pattern = "github-actions@github.com", skip = true },
+  { field = "remote.pr_title", pattern = "feat\\s*(\\([^)]+\\))?\\s*:", group = "<!-- 0 -->🚀 Features" },
+  { field = "remote.pr_title", pattern = "fix\\s*(\\([^)]+\\))?\\s*:", group = "<!-- 1 -->🐛 Bug Fixes" },
+  { field = "remote.pr_title", pattern = "doc\\s*(\\([^)]+\\))?\\s*:", group = "<!-- 3 -->📚 Documentation" },
+  { field = "remote.pr_title", pattern = "perf\\s*(\\([^)]+\\))?\\s*:", group = "<!-- 4 -->⚡ Performance" },
+  { field = "remote.pr_title", pattern = "refactor\\s*(\\([^)]+\\))?\\s*:", group = "<!-- 2 -->🚜 Refactor" },
+  { field = "remote.pr_title", pattern = "style\\s*(\\([^)]+\\))?\\s*:", group = "<!-- 5 -->🎨 Styling" },
+  { field = "remote.pr_title", pattern = "test\\s*(\\([^)]+\\))?\\s*:", group = "<!-- 6 -->🧪 Testing" },
+  { field = "remote.pr_title", pattern = "chore\\s*\\(\\s*release\\s*\\)\\s*:", skip = true },
+  { field = "remote.pr_title", pattern = "chore\\s*\\(\\s*deps.*\\s*\\)\\s*:", skip = true },
+  { field = "remote.pr_title", pattern = "chore\\s*\\(\\s*pr\\s*\\)\\s*:", skip = true },
+  { field = "remote.pr_title", pattern = "chore\\s*\\(\\s*pull\\s*\\)\\s*:", skip = true },
+  { field = "remote.pr_title", pattern = "chore\\s*(\\([^)]+\\))?\\s*:|ci\\s*(\\([^)]+\\))?\\s*:", group = "<!-- 7 -->⚙️ Miscellaneous Tasks" },
+  { field = "remote.pr_title", pattern = "revert\\s*(\\([^)]+\\))?\\s*:", group = "<!-- 9 -->◀️ Revert" },
   { field = "remote.pr_title", pattern = ".*", group = "<!-- 10 -->💼 Other" },
 ]
 protect_breaking_commits = false
 filter_commits = true
 topo_order = false
 sort_commits = "oldest"
+
+[remote.github]
+owner = "nyanco-project"
+repo = "cliff-ci-test"

@@ -70,7 +70,7 @@ commit_parsers = [
   { field = "remote.pr_title", pattern = "feat\\s*(\\([^)]+\\))?\\s*:", group = "<!-- 00 -->🚀 Features" },
   { field = "remote.pr_title", pattern = "fix\\s*(\\([^)]+\\))?\\s*:", group = "<!-- 01 -->🐛 Bug Fixes" },
   { field = "remote.pr_title", pattern = "refactor\\s*(\\([^)]+\\))?\\s*:", group = "<!-- 02 -->🚜 Refactor" },
-  { field = "remote.pr_title", pattern = "doc\\s*(\\([^)]+\\))?\\s*:", group = "<!-- 03 -->📚 Documentation" },
+  { field = "remote.pr_title", pattern = "docs\\s*(\\([^)]+\\))?\\s*:", group = "<!-- 03 -->📚 Documentation" },
   { field = "remote.pr_title", pattern = "perf\\s*(\\([^)]+\\))?\\s*:", group = "<!-- 04 -->⚡ Performance" },
   { field = "remote.pr_title", pattern = "style\\s*(\\([^)]+\\))?\\s*:", group = "<!-- 05 -->🎨 Styling" },
   { field = "remote.pr_title", pattern = "test\\s*(\\([^)]+\\))?\\s*:", group = "<!-- 06 -->🧪 Testing" },

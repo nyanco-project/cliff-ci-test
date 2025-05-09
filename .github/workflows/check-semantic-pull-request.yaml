@@ -17,11 +17,12 @@ jobs:
             feat
             fix
             refactor
-            doc
+            docs
             perf
             style
             test
             chore
+            ci
             revert
           requireScope: false
           disallowScopes: [A-Z]+

@@ -7,7 +7,7 @@ on:
       - synchronize
       - reopened
 jobs:
-  semantic-pr:
+  main:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: read

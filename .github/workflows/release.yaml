@@ -6,7 +6,7 @@ on:
 permissions:
   contents: write
 jobs:
-  changelog:
+  main:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main branch

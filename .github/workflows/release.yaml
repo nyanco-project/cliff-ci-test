@@ -21,23 +21,23 @@ jobs:
       - name: Generate CHANGELOG.md and release notes
         id: changelog
         run: |
-          mkdir -p devops/changelog
+          mkdir -p dev/changelog
           git-cliff \
           --latest \
           --tag ${{ github.ref_name }} \
           --github-repo ${{ github.repository }} \
           --config dev/conf/cliff.toml \
-          -o devops/changelog/${{ github.ref_name }}.md
+          -o dev/changelog/${{ github.ref_name }}.md
           {
             echo "CHANGELOG<<EOF"
-            cat devops/changelog/${{ github.ref_name }}.md
+            cat dev/changelog/${{ github.ref_name }}.md
             echo "EOF"
           } >> $GITHUB_ENV
       - name: Commit and push changelog (if changed)
         run: |
           git config --global user.name "github-actions" && \
           git config --global user.email "github-actions@github.com"
-          git add devops/changelog/${{ github.ref_name }}.md
+          git add dev/changelog/${{ github.ref_name }}.md
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else

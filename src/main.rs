@@ -14,12 +14,12 @@
 
 /// Prints a message.
 fn print(message: impl AsRef<str> + std::fmt::Display) {
-   println!("{}", message);
+    println!("{}", message);
 }
 
 /// An awesome feature.
 fn do_something() {
-   println!("Do something");
+    println!("Do something");
 }
 
 /// Entry point.
@@ -31,6 +31,7 @@ fn main() {
 #[cfg(test)]
 mod tests {
     #[test]
+    #[allow(clippy::assertions_on_constants)]
     fn test_something() {
         assert!(true);
     }
